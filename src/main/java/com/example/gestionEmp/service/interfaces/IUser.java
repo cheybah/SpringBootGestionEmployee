@@ -14,5 +14,6 @@ public interface IUser {
     User findUserByName(String username);
     int getQuantityOfUser();
     User getUserByIdUser(Long id);
+    User addRoleToUser(String username, String roleName);
 
 }

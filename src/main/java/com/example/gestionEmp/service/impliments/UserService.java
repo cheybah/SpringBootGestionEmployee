@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.gestionEmp.persistance.dao.RoleRepository;
 import com.example.gestionEmp.persistance.dao.UserRepository;
+import com.example.gestionEmp.persistance.entities.Role;
 import com.example.gestionEmp.persistance.entities.User;
 import com.example.gestionEmp.service.interfaces.IUser;
 
@@ -14,6 +16,7 @@ public class UserService implements IUser {
 	
 	@Autowired 
 	UserRepository userrepository ;
+	RoleRepository rolerepository;
 
 	@Override
 	public User saveUser(User user) {
@@ -62,5 +65,14 @@ public class UserService implements IUser {
 	public User getUserByIdUser(Long id) {
 		// TODO Auto-generated method stub
 		return userrepository.getUserByIdUser(id);
+	}
+
+	@Override
+	public User addRoleToUser(String username, String roleName) {
+		// TODO Auto-generated method stub
+		User user= userrepository.findByUsername(username);
+		Role role= rolerepository.findByRole(roleName);
+		user.getRoles().add(role);
+		return user;
 	} 
 }
