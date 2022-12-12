@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.secret'"
+  },
+  {
+    "name": "cheyma.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'cheyma.app.jwtSecret'"
+  },
+  {
+    "name": "cheyma.app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'cheyma.app.jwtExpirationMs'"
+  }
+]}
