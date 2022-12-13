@@ -60,10 +60,10 @@ public class UserRestController {
 		user.setUsername(userDetails.getUsername());
 		user.setPassword(userDetails.getPassword());
 		user.setEmail(userDetails.getEmail());
-		user.setRoles(userDetails.getRoles());
 		user.setSpeciality(userDetails.getSpeciality());
 		return ResponseEntity.ok(userRep.save(user));
 	}
+
 
 	@GetMapping("/account/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable Long id) {
